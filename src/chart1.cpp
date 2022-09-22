@@ -9022,6 +9022,13 @@ void MyFrame::PostProcessNMEA(bool pos_valid, bool sog_valid,
 
     sogcog.Append(cogs);
     SetStatusText(sogcog, STAT_FIELD_SOGCOG);
+
+    // Also update Live ETA
+    // (even if the mouseEvent is not triggered)
+    double cursor_lat, cursor_lon;
+    GetCanvasUnderMouse()->GetCursorLatLon(&cursor_lat, &cursor_lon);
+    GetCanvasUnderMouse()->SetCursorStatus(cursor_lat, cursor_lon);
+
   }
 
 #ifdef ocpnUPDATE_SYSTEM_TIME
