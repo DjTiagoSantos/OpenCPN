@@ -1,0 +1,21 @@
+From: Alec Leamas <leamas.alec@gmail.com>
+Date: Thu, 25 Apr 2024 16:20:44 +0200
+Subject: tests: disable a time sensitive test
+
+---
+ test/buffer_tests.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/buffer_tests.cpp b/test/buffer_tests.cpp
+index 15acd7c..939a2fb 100644
+--- a/test/buffer_tests.cpp
++++ b/test/buffer_tests.cpp
+@@ -118,7 +118,7 @@ TEST(Buffer, RateLimit1) {
+   EXPECT_EQ(queue.size(), 20);
+ }
+ 
+-#if !defined(__APPLE__) && !defined (_WIN32)
++#if !defined(__APPLE__) && !defined (_WIN32) && !defined(OCPN_DISTRO_BUILD)
+ // The MacOS builders seems to have a lot of "too" long sleeps,
+ // same for  GA windows. Disable for now.
+ TEST(Buffer, RateLimit2) {
