@@ -1,4 +1,4 @@
-opencpn (5.8.10~alpha2+dfsg-1ubuntu1) UNRELEASED; urgency=medium
+opencpn (5.8.10~alpha2+dfsg-1ubuntu1~bpo20.04) UNRELEASED; urgency=medium
 
   * Local build
   * Temporary test build of soon to be released 5.10
